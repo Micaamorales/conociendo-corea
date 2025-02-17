@@ -1,0 +1,114 @@
+
+$primary-color: #ffb84d;
+$secondary-color: #b05c0d;
+$text-color: rgb(6, 2, 2);
+$border-color: rgb(10, 10, 10);
+$font-stack: Arial, sans-serif;
+$border-radius: 10px;
+$padding: 20px;
+$gap: 20px;
+$container-width: 50%;
+$image-width: 300px;
+
+
+$colors: (
+    primary: $primary-color,
+    secondary: $secondary-color,
+    text: $text-color,
+    border: $border-color
+);
+
+@mixin flexbox($justify: center, $wrap: wrap) {
+    display: flex;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    gap: $gap;
+    padding: $padding;
+}
+
+@mixin grid($columns: auto-fill, $min-size: 200px, $gap: 10px) {
+    display: grid;
+    grid-template-columns: repeat($columns, minmax($min-size, 1fr));
+    gap: $gap;
+    width: $container-width;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+ 
+body {
+    font-family: $font-stack;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background: map-get($colors, primary);
+    color: map-get($colors, text);
+    padding: $padding;
+}
+
+nav {
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            display: inline;
+            margin: 0 15px;
+
+            a {
+                color: map-get($colors, text);
+                text-decoration: none;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.flexbox {
+    .container {
+        @include flexbox;
+    }
+
+    .item {
+        background: map-get($colors, secondary);
+        padding: $padding;
+        border-radius: $border-radius;
+        font-weight: bold;
+    }
+}
+
+.images {
+    width: 500px;
+    max-width: $image-width;
+    height: auto;
+    border-radius: $border-radius;
+    transition: transform 0.3s ease-in-out;
+    place-self: center;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.container-grids {
+    @include grid;
+}
+
+.flexbox-section {
+    @include flexbox;
+}
+
+.border {
+    border-color: map-get($colors, border);
+    border-style: double;
+    border-width: 20px;
+    border-radius: $border-radius;
+}
+
+.container-spacing {
+    padding: 16px;
+    width: 540px;
+}

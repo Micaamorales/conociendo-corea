@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background: #ffb84d;
+  color: rgb(6, 2, 2);
+  padding: 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+nav ul li a {
+  color: rgb(6, 2, 2);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.flexbox .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.flexbox .item {
+  background: #b05c0d;
+  padding: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.images {
+  width: 500px;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  place-self: center;
+}
+.images:hover {
+  transform: scale(1.05);
+}
+
+.container-grids {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.flexbox-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.border {
+  border-color: rgb(10, 10, 10);
+  border-style: double;
+  border-width: 20px;
+  border-radius: 10px;
+}
+
+.container-spacing {
+  padding: 16px;
+  width: 540px;
+}
+
+/*# sourceMappingURL=sass2css.css.map */
